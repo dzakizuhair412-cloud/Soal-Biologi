@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Biologi Bergambar</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        
+        <div id="home-screen" class="screen active">
+            <header class="main-header">
+                <h1>KUIS BIOLOGI</h1>
+                <p>Uji Pengetahuanmu dengan Gambar!</p>
+            </header>
+            
+            <div class="info-card">
+                <h3>Petunjuk Kuis:</h3>
+                <ul>
+                    <li>Jawablah pertanyaan dengan memilih salah satu opsi yang menurutmu paling tepat.</li>
+                    <li>Kuis ini dilengkapi dengan gambar penunjang di setiap soalnya.</li>
+                    <li>Waktu pengerjaan total adalah <strong>60 menit</strong>.</li>
+                </ul>
+            </div>
+
+            <button class="btn-action" onclick="startQuiz()">Mulai Kuis Sekarang</button>
+        </div>
+
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h2 id="current-title">Kuis Biologi</h2>
+                    <div id="quiz-timer-section" class="timer-wrapper">
+                        <div id="timer">60:00</div>
+                    </div>
+                </div>
+
+                <div class="question-meta">
+                    <span id="question-counter" class="meta-badge">Soal 1 dari X</span>
+                    <span id="question-category" class="meta-badge category">Biologi</span>
+                </div>
+
+                <div class="question-box">
+                    <p id="question-text">Memuat soal...</p>
+                </div>
+
+                <div id="image-container" class="image-box hidden">
+                    <img id="question-image" src="" alt="Gambar Soal">
+                </div>
+
+                <div id="options-container" class="options-grid"></div>
+
+                <div class="quiz-footer-nav">
+                    <button id="btn-prev" class="btn-nav secondary" onclick="prevQuestion()">Sebelumnya</button>
+                    <button id="btn-next" class="btn-nav primary" onclick="nextQuestion()">Selanjutnya</button>
+                    <button id="btn-finish" class="btn-nav success hidden" onclick="confirmFinish()">Selesai Kuis</button>
+                </div>
+                
+                <div id="number-nav-grid"></div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen">
+            <div class="result-card">
+                <h2>Kuis Selesai!</h2>
+                <div class="score-display">
+                    <span class="score-label">Skor Akhir</span>
+                    <span id="final-score" class="score-value">0</span>
+                </div>
+
+                <div class="quick-stats">
+                    <div class="stat-box"><strong id="total-correct" class="txt-success">0</strong><span>Benar</span></div>
+                    <div class="stat-box"><strong id="total-wrong" class="txt-danger">0</strong><span>Salah</span></div>
+                </div>
+
+                <button class="btn-action" onclick="backToHome()">Kembali ke Menu Utama</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
